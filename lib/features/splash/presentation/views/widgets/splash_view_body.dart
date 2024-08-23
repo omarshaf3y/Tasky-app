@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tasky/core/utils/app_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -46,6 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     _taskController.forward();
     _yController.forward();
+    navigateToOnBoarding();
   }
 
   @override
@@ -53,6 +56,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _taskController.dispose();
     _yController.dispose();
     super.dispose();
+  }
+
+  void navigateToOnBoarding() {
+    Future.delayed(const Duration(seconds: 3), () {
+      GoRouter.of(context).push(AppRouter.kHomeView);
+    });
   }
 
   @override
