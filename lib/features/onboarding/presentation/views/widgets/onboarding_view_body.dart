@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tasky/core/utils/app_router.dart';
+
+import 'custom_button.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
@@ -34,33 +38,11 @@ class OnBoardingViewBody extends StatelessWidget {
                 fontWeight: FontWeight.w400),
           ),
           const SizedBox(height: 32.5),
-          ElevatedButton(
+          CustomButton(
+            textButton: "Let's Start",
             onPressed: () {
-              // Add your onPressed action here
+              GoRouter.of(context).push(AppRouter.kLoginView);
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff5F33E1),
-              fixedSize: const Size(331, 60),
-              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Let's Start",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 19,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Image.asset('assets/img/Arrow - Left.png'),
-              ],
-            ),
           ),
         ],
       ),

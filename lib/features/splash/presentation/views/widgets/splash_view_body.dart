@@ -59,9 +59,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToOnBoarding() {
-    Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).push(AppRouter.kHomeView);
-    });
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        GoRouter.of(context).push(AppRouter.kOnBoarding);
+      },
+    );
   }
 
   @override
