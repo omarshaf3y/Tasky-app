@@ -9,7 +9,7 @@ class SignUpText extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        // GoRouter.of(context).pop(AppRouter.kOnBoarding);
+        GoRouter.of(context).push(AppRouter.kSignupView);
       },
       child: const Text.rich(
         TextSpan(
